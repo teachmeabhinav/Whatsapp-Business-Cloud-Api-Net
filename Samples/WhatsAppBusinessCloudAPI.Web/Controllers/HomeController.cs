@@ -410,6 +410,7 @@ namespace WhatsAppBusinessCloudAPI.Web.Controllers
                 };
 
 
+
                 var results = await _whatsAppBusinessClient.SendTextMessageTemplateAsync(textTemplateMessage);
 
                 if (results != null)
