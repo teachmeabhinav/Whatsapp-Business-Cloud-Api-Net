@@ -16,4 +16,10 @@ jobs:
           approvePullRequests: "true"
           labelPullRequestsWhenApproved: "true"
           labelPullRequestsWhenReviewNeeded: "false"
-          failJobsWhenReviewNeeded: "false"
+          failJobsWhenReviewNeeded: "true"          
+         # Wait for Codeball to return the status
+      - name: Get Status
+        id: codeball_status
+        uses: sturdy-dev/codeball-action/status@v2
+        with:
+         codeball-job-id: ${{ steps.codeball_baller.outputs.codeball-job-id }}
